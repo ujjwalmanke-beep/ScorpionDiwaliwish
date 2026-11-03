@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SCAN YOUR DIWALI — Scorpion Group</title>
+<meta name="description" content="ONE SCAN. ONE WISH. A BRIGHTER DIWALI. Reveal your personal Diwali wish from Scorpion Group.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#1a0606; --bg2:#2d0c0c; --gold:#d9b45c; --gold-light:#f5d98a;
+    --cream:#fdf6e8; --muted:#c9a87a; --card:#2e0f0f;
+  }
+  body{
+    font-family:'Inter',system-ui,sans-serif; background:radial-gradient(120% 90% at 50% 0%, #4a1515 0%, var(--bg2) 35%, var(--bg) 70%);
+    color:var(--cream); min-height:100vh; display:flex; justify-content:center;
+  }
+  .phone{width:100%;max-width:430px;min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;
+    border-left:1px solid rgba(217,180,92,.15);border-right:1px solid rgba(217,180,92,.15);}
+  /* ambient diyas */
+  .glow{position:absolute;pointer-events:none;border-radius:50%;filter:blur(60px);opacity:.5}
+  .g1{width:300px;height:300px;background:#ff8a2a33;top:-80px;left:60px}
+  .g2{width:200px;height:200px;background:#ffcc5533;top:35%;left:-60px}
+  .g3{width:220px;height:220px;background:#ff6a2a22;bottom:5%;right:-60px}
+  .pattern{position:absolute;inset:0;opacity:.07;background-image:radial-gradient(var(--gold) 1px, transparent 1px);background-size:22px 22px;pointer-events:none}
+  header{text-align:center;padding:28px 24px 8px;z-index:2}
+  .eyebrow{letter-spacing:.35em;font-size:11px;color:var(--gold);font-weight:600}
+  .rule{display:flex;align-items:center;gap:10px;justify-content:center;margin:10px 0;color:var(--gold)}
+  .rule:before,.rule:after{content:'';height:1px;width:70px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .campaign-line{font-size:11px;letter-spacing:.22em;color:var(--muted);font-weight:600}
+  main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:18px 22px 24px;z-index:2}
+  .card{background:linear-gradient(180deg, #3a1515 0%, #240b0b 100%);border:1px solid rgba(217,180,92,.35);
+    border-radius:22px;padding:32px 24px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.08);position:relative;overflow:hidden}
+  .card:before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--gold-light),transparent)}
+  h1{font-family:'Cormorant Garamond',serif;font-size:38px;line-height:1.05;font-weight:600}
+  h1 em{font-style:italic;font-weight:500;color:var(--gold-light)}
+  .sub{font-size:14.5px;line-height:1.6;color:#e9d5b0;margin:14px 0 0}
+  .diya-wrap{margin:22px auto 6px;width:90px;height:90px;position:relative;display:flex;align-items:center;justify-content:center}
+  .diya{font-size:56px;filter:drop-shadow(0 0 18px #ffaa33);transition:.5s}
+  .diya.dim{filter:grayscale(.6) brightness(.6);opacity:.6}
+  .flame{position:absolute;top:8px;width:14px;height:22px;background:radial-gradient(#fff8d0,#ffcc55 40%,#ff7a1a 70%,transparent 75%);border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;animation:flick 1.1s infinite alternate ease-in-out;transform-origin:bottom}
+  @keyframes flick{from{transform:scale(1) rotate(-2deg)}to{transform:scale(1.15) rotate(2deg)}}
+  .btn{width:100%;padding:17px;border:none;border-radius:999px;font-weight:700;letter-spacing:.14em;font-size:14px;cursor:pointer;
+    background:linear-gradient(180deg,var(--gold-light),var(--gold));color:#2a1500;box-shadow:0 8px 24px rgba(217,180,92,.35);margin-top:18px;transition:.2s}
+  .btn:active{transform:scale(.98)}
+  .btn.ghost{background:transparent;color:var(--gold-light);border:1px solid rgba(217,180,92,.5);box-shadow:none;margin-top:10px}
+  .micro{font-size:12px;color:var(--muted);margin-top:12px}
+  .wish-label{letter-spacing:.3em;font-size:11px;color:var(--gold);font-weight:600}
+  .wish-text{font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1.35;margin:16px 0;font-style:italic;color:#fff8e6}
+  .sender{font-size:13px;color:var(--muted)}
+  .divider{margin:20px 0 14px;border-top:1px solid rgba(217,180,92,.25);padding-top:16px}
+  .tomorrow{font-size:12px;letter-spacing:.2em;font-weight:700;color:var(--gold-light)}
+  .verticals{display:flex;flex-direction:column;gap:8px;margin-top:12px;font-size:12.5px;color:#e9d5b0}
+  .verticals b{color:#fff}
+  .kept{ display:inline-block;font-size:11px;background:#ffffff14;border:1px solid rgba(217,180,92,.3);padding:6px 12px;border-radius:999px;color:var(--gold-light);margin-top:12px}
+  footer{text-align:center;padding:18px;font-size:11px;color:#8a6f4d;letter-spacing:.08em;z-index:2}
+  footer b{color:var(--gold)}
+  .hidden{display:none!important}
+  .fade{animation:fade .6s ease both}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .share-row{display:flex;gap:10px;margin-top:6px}
+  .share-row .btn{margin-top:10px}
+  /* loading dots */
+  .lighting{font-size:14px;color:var(--gold-light);letter-spacing:.12em;margin-top:10px;animation:pulse 1.2s infinite}
+  @keyframes pulse{0%,100%{opacity:.6}50%{opacity:1}}
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div><div class="pattern"></div>
+  <header>
+    <div class="eyebrow">SCAN YOUR DIWALI</div>
+    <div class="rule">🪔</div>
+    <div class="campaign-line">ONE SCAN. ONE WISH. A BRIGHTER DIWALI.</div>
+  </header>
+
+  <main>
+    <!-- STEP 1: PRE-REVEAL -->
+    <div id="screen-start" class="card fade">
+      <h1>There's a <em>Diwali secret</em> waiting for you.</h1>
+      <p class="sub">You've opened the door to your personal wish.<br>It's already chosen. You just have to reveal it.</p>
+      <div class="diya-wrap"><div class="flame"></div><div id="diya1" class="diya dim">🪔</div></div>
+      <button class="btn" onclick="reveal()">REVEAL MY WISH</button>
+      <div class="micro">Tap once. No sign-up. Just a moment of light.</div>
+    </div>
+
+    <!-- STEP 2: LOADING -->
+    <div id="screen-loading" class="card hidden">
+      <div class="diya-wrap"><div class="flame"></div><div class="diya">🪔</div></div>
+      <div class="lighting">Lighting your diya…</div>
+    </div>
+
+    <!-- STEP 3: WISH -->
+    <div id="screen-wish" class="card hidden">
+      <div class="wish-label">YOUR DIWALI WISH</div>
+      <div id="wishText" class="wish-text"></div>
+      <div class="sender">— With warmth, from <b style="color:#fff">Scorpion Group</b></div>
+      <div id="keptNote" class="kept hidden">🪔 We kept this wish for you on this device</div>
+      <div class="divider">
+        <div class="tomorrow">THREE VERTICALS. ONE BRIGHTER TOMORROW.</div>
+        <div class="verticals">
+          <div><b>Scorpion Express</b> • Moving possibilities forward</div>
+          <div><b>Scorpion Containers</b> • Protecting what goes inside</div>
+          <div><b>Scorpion Warehousing</b> • Keeping businesses ready</div>
+        </div>
+      </div>
+      <div class="share-row">
+        <button class="btn" onclick="shareWish()" style="flex:1.2">SHARE MY WISH</button>
+        <button class="btn ghost" onclick="giftNew()" style="flex:1">GIFT A WISH ↻</button>
+      </div>
+      <div class="micro" id="shareHint">Share on WhatsApp, or copy your wish.</div>
+    </div>
+  </main>
+
+  <footer><b>SCORPION GROUP</b> &nbsp;•&nbsp; Express • Containers • Warehousing<br><span style="font-size:10px">This wish stays lit all year.</span></footer>
+</div>
+
+<script>
+const WISHES = [
+"May the dream you've been quietly working on move a little closer to reality this Diwali.",
+"May this Diwali give your dreams the light, patience and momentum they deserve.",
+"May you find new faith in an old dream you almost kept aside.",
+"May new doors open for you, and may you feel ready to walk through them.",
+"May this Diwali bring work that values you, challenges you, and helps you grow.",
+"May the right opportunity find you at the right moment, and may you recognise it.",
+"May your sincere efforts turn into achievements worth celebrating.",
+"May every small step you take this year light up into something big.",
+"May your hard work be seen, appreciated, and beautifully rewarded.",
+"May your home and work be filled with growth, abundance and good fortune.",
+"May this Diwali bring prosperity that you can share with those you love.",
+"May plenty find its way to your doorstep, and warmth remain in your home.",
+"May your days ahead be filled with warmth, laughter and togetherness.",
+"May you always have someone to share the light with, and light to share with someone.",
+"May this Diwali fill your heart with calm, and your home with happiness.",
+"May this Diwali mark a fresh beginning, with ideas that excite you again.",
+"May you start something new with courage, and carry it forward with joy.",
+"May the light of Diwali help you leave behind what weighs you, and welcome what lifts you."
+];
+const KEY = 'scan_your_diwali_wish_v1';
+function getStored(){ try{ const i = localStorage.getItem(KEY); if(i===null) return null; const idx=parseInt(i,10); if(isNaN(idx)||idx<0||idx>=WISHES.length) return null; return idx; }catch(e){ return null; } }
+function store(idx){ try{ localStorage.setItem(KEY, String(idx)); }catch(e){} }
+function showWish(idx, isKept){
+  document.getElementById('screen-start').classList.add('hidden');
+  document.getElementById('screen-loading').classList.add('hidden');
+  const w = document.getElementById('screen-wish');
+  w.classList.remove('hidden'); w.classList.remove('fade'); void w.offsetWidth; w.classList.add('fade');
+  document.getElementById('wishText').textContent = '\u201C' + WISHES[idx] + '\u201D';
+  document.getElementById('keptNote').classList.toggle('hidden', !isKept);
+  document.getElementById('diya1')?.classList.remove('dim');
+}
+function reveal(){
+  const existing = getStored();
+  document.getElementById('screen-start').classList.add('hidden');
+  const l = document.getElementById('screen-loading');
+  l.classList.remove('hidden');
+  setTimeout(()=>{
+    if(existing!==null){ showWish(existing, true); }
+    else{
+      const idx = Math.floor(Math.random()*WISHES.length);
+      store(idx); showWish(idx, false);
+    }
+  }, 1300);
+}
+// Auto-show if returning visitor? No - still require tap to preserve curiosity, but show kept note after reveal.
+// Gift mode: clear and pick new for gifting (does not overwrite? For demo we keep original but allow preview)
+function giftNew(){
+  const idx = Math.floor(Math.random()*WISHES.length);
+  document.getElementById('wishText').textContent = '\u201C' + WISHES[idx] + '\u201D';
+  document.getElementById('keptNote').classList.add('hidden');
+  document.getElementById('shareHint').textContent = 'Previewing a gift wish. Your original wish is still saved on this device.';
+}
+function shareWish(){
+  const txt = document.getElementById('wishText').textContent;
+  const shareText = `I just received my Diwali wish ✨\n${txt}\n\nGet yours — SCAN YOUR DIWALI by Scorpion Group.\nONE SCAN. ONE WISH. A BRIGHTER DIWALI.\n${location.href}\n#ScanYourDiwali`;
+  if(navigator.share){
+    navigator.share({title:'My Diwali Wish', text:shareText}).catch(()=>{});
+  } else {
+    const url = 'https://wa.me/?text=' + encodeURIComponent(shareText);
+    window.open(url,'_blank');
+  }
+}
+// If returning visitor, hint it
+window.onload = ()=>{
+  if(getStored()!==null){
+    document.querySelector('#screen-start .sub').innerHTML = "Welcome back.<br>Your wish is still waiting where you left it.";
+  }
+};
+</script>
+<script>window.__CF$cv$params={r:'a53287b69ae987ee',t:'MTc5MzQ0ODM0OQ==',u:'01a191da116f778bad43b56050875250',ut:'HDMFSF8Gn7o5lKw6gA1r4QGGeHlZ9D4.yJuDM3p0TkI-1793448350-1.2.1.1-ErYz3ikNU8WeVGA96OyC7PCwrFaQhhKx97XckpZrQIafO51sWlM9b2WKmeAwiIVZJjwv7_VN57Fbv0yRnC8kxQ3ohMAypKTHxncAjhBdpnw',i:60};(function(){if(!document.body)return;var l=window.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/precursor/main.js?ray=a53287b69ae987ee',s=document.createElement('script');s.src=o?new URL(u,o).href:u;document.head.appendChild(s);})();</script></body>
+</html>
